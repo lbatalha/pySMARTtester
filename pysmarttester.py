@@ -3,7 +3,7 @@
 import os, sys, getopt, subprocess
 
 #List of drives to ignore
-ignored = ['/dev/sdb']
+ignored = []
 
 #Location to store result of checks
 log = "/tmp/"

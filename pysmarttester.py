@@ -2,9 +2,6 @@
 
 import os, sys, getopt, subprocess
 
-#Default Test to run
-test = "short"
-
 #List of drives to ignore
 ignored = ['/dev/sdb']
 

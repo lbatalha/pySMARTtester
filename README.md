@@ -20,3 +20,4 @@ Simple script used to run smart self-tests on multiple drives at once
 ##Dependencies:
   - [`smartmontools`](https://www.smartmontools.org/)
   - [`badblocks` (e2fsprogs)](http://e2fsprogs.sourceforge.net/) - Only for `-t badblocks`
+  - [`python2`](https://www.python.org)

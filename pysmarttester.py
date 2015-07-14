@@ -13,7 +13,7 @@ log = "/tmp/"
 
 
 def usage():
-	print("Usage: [-h:--help] [--test:-t <test_type>]\nTest types: short, long, badblocks")
+	print("Usage:\n\t-h, --help\t\tDisplay this\n\t-t, --test <test_type>\tType of test to run (short, long, badblocks)")
 
 #check if user is root, else invoke sudo
 if os.geteuid() == 0:

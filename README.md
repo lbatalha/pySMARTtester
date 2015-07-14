@@ -2,7 +2,8 @@
 Simple script used to run smart self-tests on multiple drives at once
 
 ###Usage:
-  `-t, --test <test_type>   Type of test to run (short, long, badblocks)\n`
+  `-t, --test <test_type>   Type of test to run (short, long, badblocks)`
+  
   `-h, --help               Show options`
 
 ####Test types:

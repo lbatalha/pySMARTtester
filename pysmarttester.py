@@ -1,6 +1,7 @@
 #!/usr/bin/env python2
 
 import os, sys, getopt, subprocess
+from textwrap import dedent
 
 #List of drives to ignore
 ignored = []
@@ -10,7 +11,12 @@ log = "/tmp/"
 
 
 def usage():
-	print("Usage:\n\t-h, --help\t\tDisplay this\n\t-t, --test <test_type>\tType of test to run (short, long, badblocks)")
+	s = '''\n\
+	Usage:
+	\t-h, --help\t\tDisplay this
+	\t-t, --test <test_type>\tType of test to run (short, long, badblocks)
+	'''
+	print(dedent(s))
 
 #check if user is root, else invoke sudo
 if os.geteuid() == 0:
@@ -25,7 +31,7 @@ except getopt.GetoptError:
 	exit(1)
 if len(opts) > 0:
 	for opt, arg in opts:
-		if opt in ('-t', '--test'):
+		if opt in ['-t', '--test']:
 			test = arg
 		elif opt in ['-h', '--help']:
 			usage()
@@ -36,6 +42,7 @@ if len(opts) > 0:
 else:
 	usage()
 	exit(1)
+
 smartscan = list(command)
 smartscan.extend(['smartctl', '--scan'])
 drives = subprocess.check_output(smartscan).split('\n')[:-1]
